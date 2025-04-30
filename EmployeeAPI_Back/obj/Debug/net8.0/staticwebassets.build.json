@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "VWSiKAFSZqa1ti349plw08S93uRweyQ2/fux3LMx0uw=",
+  "Source": "EmployeeAPI_Back",
+  "BasePath": "_content/EmployeeAPI_Back",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
