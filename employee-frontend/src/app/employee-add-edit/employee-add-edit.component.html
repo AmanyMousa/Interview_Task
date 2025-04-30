@@ -1,0 +1,48 @@
+<h2 mat-dialog-title>{{data ? 'Edit' : 'Add'}} Employee</h2>
+<div mat-dialog-content>
+  <form [formGroup]="employeeForm">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName">
+      <mat-error *ngIf="employeeForm.get('firstName')?.hasError('required')">
+        First name is required
+      </mat-error>
+      <mat-error *ngIf="employeeForm.get('firstName')?.hasError('minlength')">
+        Minimum 2 characters required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName">
+      <mat-error *ngIf="employeeForm.get('lastName')?.hasError('required')">
+        Last name is required
+      </mat-error>
+      <mat-error *ngIf="employeeForm.get('lastName')?.hasError('minlength')">
+        Minimum 2 characters required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email">
+      <mat-error *ngIf="employeeForm.get('email')?.hasError('required')">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="employeeForm.get('email')?.hasError('email')">
+        Please enter a valid email
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Position</mat-label>
+      <input matInput formControlName="position">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!employeeForm.valid">
+    {{data ? 'Update' : 'Save'}}
+  </button>
+</div>
